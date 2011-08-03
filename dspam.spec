@@ -7,7 +7,7 @@
 Summary:	A library and Mail Delivery Agent for Bayesian spam filtering
 Name:		dspam
 Version:	3.10.0
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	GPL
 Group:		System/Servers
 URL:		http://dspam.nuclearelephant.com/
@@ -330,22 +330,24 @@ if [ "$1" = "0" ]; then
     fi
 fi
 
-%if %mdkversion < 200900
-%post -n %{libname} -p /sbin/ldconfig
+%if "%{distribution}" == "Mandriva Linux"
+	%if %mdkversion < 200900
+		%post -n %{libname} -p /sbin/ldconfig
 
-%postun -n %{libname} -p /sbin/ldconfig
+		%postun -n %{libname} -p /sbin/ldconfig
 
-%post backend-mysql -p /sbin/ldconfig
+		%post backend-mysql -p /sbin/ldconfig
 
-%postun backend-mysql -p /sbin/ldconfig
+		%postun backend-mysql -p /sbin/ldconfig
 
-%post backend-pgsql -p /sbin/ldconfig
+		%post backend-pgsql -p /sbin/ldconfig
 
-%postun backend-pgsql -p /sbin/ldconfig
+		%postun backend-pgsql -p /sbin/ldconfig
 
-%post backend-sqlite3 -p /sbin/ldconfig
+		%post backend-sqlite3 -p /sbin/ldconfig
 
-%postun backend-sqlite3 -p /sbin/ldconfig
+		%postun backend-sqlite3 -p /sbin/ldconfig
+	%endif
 %endif
 
 %clean
