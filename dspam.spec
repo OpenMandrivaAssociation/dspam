@@ -6,8 +6,8 @@
 
 Summary:	A library and Mail Delivery Agent for Bayesian spam filtering
 Name:		dspam
-Version:	3.9.0
-Release:	%mkrel 9
+Version:	3.10.0
+Release:	%mkrel 1
 License:	GPL
 Group:		System/Servers
 URL:		http://dspam.nuclearelephant.com/
@@ -378,12 +378,16 @@ rm -rf %{buildroot}
 %attr(0755,root,root) %{_bindir}/dspam_merge
 %attr(0755,root,root) %{_bindir}/dspam_stats
 %attr(0755,root,root) %{_bindir}/dspam_train
+%attr(0755,root,root) %{_bindir}/dspam_notify
 %attr(0644,root,root) %{_mandir}/man1/dspam.1*
 %attr(0644,root,root) %{_mandir}/man1/dspam_clean.1*
 %attr(0644,root,root) %{_mandir}/man1/dspam_dump.1*
 %attr(0644,root,root) %{_mandir}/man1/dspam_merge.1*
 %attr(0644,root,root) %{_mandir}/man1/dspam_stats.1*
 %attr(0644,root,root) %{_mandir}/man1/dspam_train.1*
+%attr(0644,root,root) %{_mandir}/man1/dspam_admin.1*
+%attr(0644,root,root) %{_mandir}/man1/dspam_crc.1*
+%attr(0644,root,root) %{_mandir}/man1/dspam_logrotate.1*
 %attr(0644,root,root) /var/www/icons/dspam.gif
 %dir %attr(0750,root,mail) %{_localstatedir}/lib/dspam
 %dir %attr(0750,root,mail) %{_localstatedir}/lib/dspam/data
