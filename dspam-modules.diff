@@ -1,0 +1,48 @@
+--- dspam-3.10.0/src/Makefile.am	2011-08-01 10:28:04.000000000 +0200
++++ dspam-3.10.0.dlucio/src/Makefile.am	2011-08-04 00:57:21.000000000 +0200
+@@ -135,40 +135,35 @@
+ 	mysql_drv.c mysql_drv.h 
+ libmysql_drv_la_LIBADD = $(libmysql_drv_libs) -L. -ldspam
+ libmysql_drv_la_CPPFLAGS = $(libmysql_drv_cppflags)
+-libmysql_drv_la_LDFLAGS = $(libmysql_drv_ldflags)
+-libmysql_drv_la_LDFLAGS += -rpath '$(pkglibdir)' -version-info $(libversion) 
++libmysql_drv_la_LDFLAGS = -rpath '$(pkglibdir)' -avoid-version -module
+ libmysql_drv_la_DEPENDENCIES = libdspam.la
+ 
+ libpgsql_drv_la_SOURCES = \
+ 	pgsql_drv.c pgsql_drv.h 
+ libpgsql_drv_la_LIBADD = $(libpgsql_drv_libs) -L. -ldspam
+ libpgsql_drv_la_CPPFLAGS = $(libpgsql_drv_cppflags)
+-libpgsql_drv_la_LDFLAGS = $(libpgsql_drv_ldflags)
+-libpgsql_drv_la_LDFLAGS += -rpath '$(pkglibdir)' -version-info $(libversion)
++libpgsql_drv_la_LDFLAGS = -rpath '$(pkglibdir)' -avoid-version -module
+ libpgsql_drv_la_DEPENDENCIES = libdspam.la
+ 
+ libsqlite_drv_la_SOURCES = \
+ 	sqlite_drv.c sqlite_drv.h 
+ libsqlite_drv_la_LIBADD = $(libsqlite_drv_libs) -L. -ldspam
+ libsqlite_drv_la_CPPFLAGS = $(libsqlite_drv_cppflags)
+-libsqlite_drv_la_LDFLAGS = $(libsqlite_drv_ldflags)
+-libsqlite_drv_la_LDFLAGS += -rpath '$(pkglibdir)' -version-info $(libversion)
++libsqlite_drv_la_LDFLAGS = -rpath '$(pkglibdir)' -avoid-version -module
+ libsqlite_drv_la_DEPENDENCIES = libdspam.la
+ 
+ libsqlite3_drv_la_SOURCES = \
+ 	sqlite3_drv.c sqlite3_drv.h 
+ libsqlite3_drv_la_LIBADD = $(libsqlite3_drv_libs) -L. -ldspam
+ libsqlite3_drv_la_CPPFLAGS = $(libsqlite3_drv_cppflags)
+-libsqlite3_drv_la_LDFLAGS = $(libsqlite3_drv_ldflags)
+-libsqlite3_drv_la_LDFLAGS += -rpath '$(pkglibdir)' -version-info $(libversion)
++libsqlite3_drv_la_LDFLAGS = -rpath '$(pkglibdir)' -avoid-version -module
+ libsqlite3_drv_la_DEPENDENCIES = libdspam.la
+ 
+ libhash_drv_la_SOURCES = \
+ 	hash_drv.c hash_drv.h
+ libhash_drv_la_LIBADD = $(libhash_drv_libs) -L. -ldspam
+ libhash_drv_la_CPPFLAGS = $(libhash_drv_cppflags)
+-libhash_drv_la_LDFLAGS = $(libhash_drv_ldflags)
+-libhash_drv_la_LDFLAGS += -rpath '$(pkglibdir)' -version-info $(libversion)
++libhash_drv_la_LDFLAGS = -rpath '$(pkglibdir)' -avoid-version -module
+ libhash_drv_la_DEPENDENCIES = libdspam.la
+ 
+ endif
