@@ -1,7 +1,3 @@
 sources:
-  "dspam-3.10.1.tar.gz:"	dfd78c9f696470077d4e2e2b52f1f42f90ac52cc
-  "dspam.cf:"	8ad3124e841a9b544c199a28bff3815db4aa6898
-  "dspam.cron:"	2202ac5271d50ce532044df5e2bf9cca22ceffa0
-  "dspam.init:"	f69cd827487dc12631ede521961f013eea9d9588
-  "dspam_sa_trainer.tar.bz2:"	d1e78517fa9f4a253b7e438dd43c79fb9045a20d
-  "dspam.sysconfig:"	662b87aa77bb9eb3df77b541fa971b68db0b2eaa
+  "dspam-3.10.1.tar.gz": dfd78c9f696470077d4e2e2b52f1f42f90ac52cc
+  "dspam_sa_trainer.tar.bz2": d1e78517fa9f4a253b7e438dd43c79fb9045a20d

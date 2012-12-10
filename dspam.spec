@@ -445,3 +445,246 @@ rm -rf %{buildroot}
 %attr(0755,root,root) %{_datadir}/dspam/cgi-bin/*.cgi
 %attr(0755,root,root) %{_datadir}/dspam/cgi-bin/*.pl
 %attr(0644,root,root) %{_datadir}/dspam/cgi-bin/templates/*.html
+
+
+%changelog
+* Sun Aug 14 2011 Oden Eriksson <oeriksson@mandriva.com> 3.10.1-1mdv2012.0
++ Revision: 694462
+- 3.10.1
+
+* Thu Aug 04 2011 Luis Daniel Lucio Quiroz <dlucio@mandriva.org> 3.10.0-3
++ Revision: 693119
+- trying to make this SPEC compatible with mageia so it will be easier for me
+
+* Thu Aug 04 2011 Luis Daniel Lucio Quiroz <dlucio@mandriva.org> 3.10.0-2
++ Revision: 693118
+- Init LSB compatible
+- 3.10.0
+  P0 rediffed
+
+  + Oden Eriksson <oeriksson@mandriva.com>
+    - relink against libmysqlclient.so.18
+
+* Mon Jan 03 2011 Oden Eriksson <oeriksson@mandriva.com> 3.9.0-8mdv2011.0
++ Revision: 627772
+- don't force the usage of automake1.7
+
+* Sat Jan 01 2011 Oden Eriksson <oeriksson@mandriva.com> 3.9.0-7mdv2011.0
++ Revision: 627220
+- rebuilt against mysql-5.5.8 libs, again
+
+* Thu Dec 30 2010 Oden Eriksson <oeriksson@mandriva.com> 3.9.0-6mdv2011.0
++ Revision: 626514
+- rebuilt against mysql-5.5.8 libs
+
+* Sun Dec 05 2010 Oden Eriksson <oeriksson@mandriva.com> 3.9.0-4mdv2011.0
++ Revision: 610285
+- rebuild
+
+* Tue Feb 23 2010 Oden Eriksson <oeriksson@mandriva.com> 3.9.0-3mdv2010.1
++ Revision: 510219
+- rebuild
+- not really unmaintained...
+
+  + Guillaume Rousse <guillomovitch@mandriva.org>
+    - unmaintained webapp cleaning
+
+* Thu Feb 18 2010 Oden Eriksson <oeriksson@mandriva.com> 3.9.0-2mdv2010.1
++ Revision: 507483
+- rebuild
+
+* Wed Jan 13 2010 Oden Eriksson <oeriksson@mandriva.com> 3.9.0-1mdv2010.1
++ Revision: 490638
+- 3.9.0
+- fix deps (libtool)
+- fix build
+- rebuild
+
+* Sat Dec 06 2008 Oden Eriksson <oeriksson@mandriva.com> 3.8.0-5mdv2009.1
++ Revision: 311299
+- rebuilt against mysql-5.1.30 libs
+
+* Tue Sep 30 2008 Oden Eriksson <oeriksson@mandriva.com> 3.8.0-4mdv2009.0
++ Revision: 290069
+- fix #35349 (/etc/logrotate.d/dspam in wrong)
+
+* Sun Jul 20 2008 Oden Eriksson <oeriksson@mandriva.com> 3.8.0-3mdv2009.0
++ Revision: 238913
+- fix linkage
+
+  + Pixel <pixel@mandriva.com>
+    - do not call ldconfig in %%post/%%postun, it is now handled by filetriggers
+    - adapt to %%_localstatedir now being /var instead of /var/lib (#22312)
+
+  + Olivier Blin <blino@mandriva.org>
+    - restore BuildRoot
+
+* Mon Dec 24 2007 Oden Eriksson <oeriksson@mandriva.com> 3.8.0-2mdv2008.1
++ Revision: 137505
+- rebuilt against openldap-2.4.7 libs
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Thu Sep 06 2007 Oden Eriksson <oeriksson@mandriva.com> 3.8.0-1mdv2008.0
++ Revision: 80906
+- 3.6.8
+- rediffed P0
+- conform to the 2008 specs
+
+
+* Fri Mar 02 2007 Oden Eriksson <oeriksson@mandriva.com> 3.6.8-3mdv2007.0
++ Revision: 131429
+- rebuild
+- bunzip sources
+
+* Fri Dec 22 2006 Oden Eriksson <oeriksson@mandriva.com> 3.6.8-2mdv2007.1
++ Revision: 101696
+- Import dspam
+
+* Tue Sep 05 2006 Oden Eriksson <oeriksson@mandriva.com> 3.6.8-1mdv2007.0
+- rebuilt against MySQL-5.0.24a-1mdv2007.0 due to ABI changes
+
+* Sat Jun 10 2006 Oden Eriksson <oeriksson@mandriva.com> 3.6.8-1mdv2007.0
+- 3.6.8
+
+* Mon May 15 2006 Oden Eriksson <oeriksson@mandriva.com> 3.6.6-2mdk
+- rebuild
+
+* Mon May 15 2006 Oden Eriksson <oeriksson@mandriva.com> 3.6.6-1mdk
+- 3.6.6
+- rediffed P0
+- fix the apache config
+
+* Wed Apr 26 2006 Oden Eriksson <oeriksson@mandriva.com> 3.6.5-1mdk
+- 3.6.5 (Minor bugfixes)
+
+* Mon Feb 13 2006 Oden Eriksson <oeriksson@mandriva.com> 3.6.4-1mdk
+- 3.6.4 (Minor bugfixes)
+
+* Thu Jan 26 2006 Oden Eriksson <oeriksson@mandriva.com> 3.6.3-2mdk
+- drop the "--enable-preferences-extension" as it's not supported by
+  all the backends (fix #19470)
+
+* Wed Jan 18 2006 Oden Eriksson <oeriksson@mandriva.com> 3.6.3-1mdk
+- 3.6.3
+
+* Tue Nov 29 2005 Oden Eriksson <oeriksson@mandriva.com> 3.6.2-1mdk
+- 3.6.2 (Major bugfixes)
+
+* Thu Nov 17 2005 Oden Eriksson <oeriksson@mandriva.com> 3.6.1-2mdk
+- since we remove rpath use /etc/ld.so.conf.d/dspam.conf (#19470)
+
+* Tue Nov 08 2005 Oden Eriksson <oeriksson@mandriva.com> 3.6.1-1mdk
+- 3.6.1 (Minor bugfixes)
+
+* Sun Oct 30 2005 Oden Eriksson <oeriksson@mandriva.com> 3.6.0-3mdk
+- rebuilt against MySQL-5.0.15
+
+* Sun Oct 23 2005 Oden Eriksson <oeriksson@mandriva.com> 3.6.0-2mdk
+- fixed P0
+- make it build on LE too
+
+* Wed Oct 19 2005 Oden Eriksson <oeriksson@mandriva.com> 3.6.0-1mdk
+- 3.6.0
+- major spec file rework due huge changes in the source
+
+* Sun Aug 14 2005 Oden Eriksson <oeriksson@mandriva.com> 3.4.9-1mdk
+- fix #17511
+
+* Wed Jun 15 2005 Oden Eriksson <oeriksson@mandriva.com> 3.4.8-1mdk
+- 3.4.8 (Minor bugfixes)
+
+* Sat Jun 04 2005 Oden Eriksson <oeriksson@mandriva.com> 3.4.7-1mdk
+- 3.4.7
+- use new rpm-4.4.x pre,post magic
+- fix new apache config locations
+
+* Tue May 10 2005 Oden Eriksson <oeriksson@mandriva.com> 3.4.6-1mdk
+- 3.4.6
+- build it against sqlite 3
+
+* Wed Apr 27 2005 Oden Eriksson <oeriksson@mandriva.com> 3.4.5-1mdk
+- 3.4.5
+
+* Thu Apr 21 2005 Oden Eriksson <oeriksson@mandriva.com> 3.4.3-2mdk
+- rebuilt against new postgresql libs
+
+* Wed Apr 13 2005 Oden Eriksson <oeriksson@mandrakesoft.com> 3.4.3-1mdk
+- 3.4.3
+
+* Thu Mar 31 2005 Oden Eriksson <oeriksson@mandrakesoft.com> 3.4.2-1mdk
+- 3.4.2
+
+* Tue Mar 15 2005 Oden Eriksson <oeriksson@mandrakesoft.com> 3.4.0-2mdk
+- fix a bug in the update-alternatives stuff
+
+* Tue Mar 15 2005 Oden Eriksson <oeriksson@mandrakesoft.com> 3.4.0-1mdk
+- 3.4.0
+- fix the update-alternatives stuff, great thanks goes to Guillaume
+  Rousse for explaining the update-alternatives.
+- major spec file and overall changes
+- added the cgi stuff as a sub package
+
+* Sat Mar 12 2005 Oden Eriksson <oeriksson@mandrakesoft.com> 3.2.7-2mdk
+- fix #14010 and #12399 
+- own directories
+- use the %%mkrel macro
+
+* Sat Feb 19 2005 Oden Eriksson <oeriksson@mandrakesoft.com> 3.2.7-1mdk
+- 3.2.7
+
+* Mon Jan 24 2005 Oden Eriksson <oeriksson@mandrakesoft.com> 3.2.5-2mdk
+- rebuilt against MySQL-4.1.x system libs
+
+* Wed Jan 19 2005 Oden Eriksson <oeriksson@mandrakesoft.com> 3.2.5-1mdk
+- 3.2.5
+
+* Mon Jan 03 2005 Oden Eriksson <oeriksson@mandrakesoft.com> 3.2.4-1mdk
+- 3.2.4
+- revert latest "lib64 fixes"
+
+* Tue Dec 28 2004 Oden Eriksson <oeriksson@mandrakesoft.com> 3.2.3-4mdk
+- lib64 fixes
+
+* Thu Dec 23 2004 Oden Eriksson <oeriksson@mandrakesoft.com> 3.2.3-3mdk
+- fix deps
+
+* Thu Dec 23 2004 Oden Eriksson <oeriksson@mandrakesoft.com> 3.2.3-2mdk
+- provide binaries with different drivers
+- added amavis-new + spamassassin integrations after ideas by Giuseppe Ghibo
+
+* Mon Nov 29 2004 Oden Eriksson <oeriksson@mandrakesoft.com> 3.2.3-1mdk
+- 3.2.3
+
+* Mon Nov 15 2004 Oden Eriksson <oeriksson@mandrakesoft.com> 3.2.2-1mdk
+- 3.2.2
+
+* Mon Nov 01 2004 Oden Eriksson <oeriksson@mandrakesoft.com> 3.2.1-1mdk
+- 3.2.1
+- drop P1, it's fixed upstream
+
+* Sun Oct 31 2004 Oden Eriksson <oeriksson@mandrakesoft.com> 3.2.0-2mdk
+- make it compile on 9.2/10.0
+- make the devel package obsolete the older one
+
+* Sun Oct 24 2004 Oden Eriksson <oeriksson@mandrakesoft.com> 3.2.0-1mdk
+- 3.2.0
+- fix P0
+- new %%{major} (again!)
+- misc spec file fixes
+- drop the weekly purge script
+
+* Fri Jun 18 2004 Oden Eriksson <oeriksson@mandrakesoft.com> 3.0.0-1mdk
+- 3.0.0
+- fix P0
+- new %%{major} (again!)
+- use domain-scale instead
+- two more binaries is gone
+
+* Sat Apr 17 2004 Oden Eriksson <oeriksson@mandrakesoft.com> 2.10.3-1mdk
+- 2.10.3
+
+* Sun Mar 07 2004 Oden Eriksson <oden.eriksson@kvikkjokk.net> 2.10-0.2mdk
+- 2.10-RC2
+

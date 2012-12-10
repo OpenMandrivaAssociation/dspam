@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Source the dspam sysconfig file
+if [ -f /etc/sysconfig/dspam ]; then
+    . /etc/sysconfig/dspam
+fi
+
+# Use user specified cron command, if any
+if [ -z ${DSPAM_CRON_COMMAND} ]; then
+    exit 0
+else
+    ${DSPAM_CRON_COMMAND}
+fi
+

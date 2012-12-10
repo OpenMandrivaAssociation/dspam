@@ -1,0 +1,8 @@
+
+# DSPAM_DEBUG="--debug"
+
+# DSPAM_USER="--user dspam"
+
+# cron command examples:
+# DSPAM_CRON_COMMAND="/usr/bin/dspam_clean"
+
