@@ -20,6 +20,7 @@ Source5:	dspam.init
 Patch0:		dspam-modules.diff
 Requires(post): rpm-helper
 Requires(preun): rpm-helper
+Requires:   apache-mod_socache_shmcb
 Requires:	clamav clamd
 BuildRequires:	autoconf2.5
 BuildRequires:	automake
@@ -231,9 +232,7 @@ Alias /dspam %{_datadir}/dspam/cgi-bin
     AllowOverride Limit AuthConfig
     DirectoryIndex dspam.cgi
 
-    Order deny,allow
-    Deny from all
-    allow from 127.0.0.1
+    Require host 127.0.0.1
 
     AuthUserFile %{_datadir}/dspam/cgi-bin/.htpasswd
     AuthGroupFile /dev/null
