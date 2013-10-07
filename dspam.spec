@@ -32,7 +32,6 @@ BuildRequires:	libtool
 #BuildConflicts:	sqlite-devel
 Obsoletes:	dspam-amavis
 Obsoletes:	dspam-db4
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 DSPAM (as in De-Spam) is an open-source project to create a new
@@ -349,11 +348,7 @@ fi
 	%endif
 %endif
 
-%clean
-rm -rf %{buildroot} 
-
 %files
-%defattr(-,root,root)
 %doc README* RELEASE.NOTES CHANGELOG txt/*.txt dspam_sa_trainer
 %doc doc/courier.txt doc/exim.txt doc/markov.txt doc/pop3filter.txt
 %doc doc/postfix.txt doc/qmail.txt doc/relay.txt doc/sendmail.txt
@@ -404,7 +399,6 @@ rm -rf %{buildroot}
 %files -n %{develname}
 %defattr(-,root,root)
 %attr(0755,root,root) %{_libdir}/libdspam.so
-%attr(0644,root,root) %{_libdir}/libdspam.*a
 %{_includedir}/dspam
 %attr(0644,root,root) %{_libdir}/pkgconfig/dspam.pc
 %attr(0644,root,root) %{_mandir}/man3/*
