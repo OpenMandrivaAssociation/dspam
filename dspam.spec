@@ -392,26 +392,22 @@ fi
 %dir %attr(0750,root,root) /var/run/dspam
 
 %files -n %{libname}
-%defattr(-,root,root)
 %attr(0755,root,root) %{_libdir}/libdspam.so.*
 %attr(0755,root,root) %{_libdir}/dspam/libhash_drv.so
 
 %files -n %{develname}
-%defattr(-,root,root)
 %attr(0755,root,root) %{_libdir}/libdspam.so
 %{_includedir}/dspam
 %attr(0644,root,root) %{_libdir}/pkgconfig/dspam.pc
 %attr(0644,root,root) %{_mandir}/man3/*
 
 %files backend-mysql
-%defattr(-,root,root)
 %doc doc/mysql_drv.txt
 %attr(0755,root,root) %{_libdir}/dspam/libmysql_drv.so
 %dir %attr(0755,root,root) %{_datadir}/dspam-mysql
 %attr(0644,root,root) %{_datadir}/dspam-mysql/*
 
 %files backend-pgsql
-%defattr(-,root,root)
 %doc doc/pgsql_drv.txt
 %attr(0755,root,root) %{_libdir}/dspam/libpgsql_drv.so
 %attr(0755,root,root) %{_bindir}/dspam_pg2int8
@@ -419,13 +415,11 @@ fi
 %attr(0644,root,root) %{_datadir}/dspam-pgsql/*
 
 %files backend-sqlite3
-%defattr(-,root,root)
 %doc doc/sqlite_drv.txt
 %attr(0755,root,root) %{_libdir}/dspam/libsqlite3_drv.so
 %{_datadir}/dspam-sqlite3
 
 %files cgi
-%defattr(-,root,root)
 %dir %attr(0755,root,root) %{_datadir}/dspam/cgi-bin
 %dir %attr(0755,root,root) %{_datadir}/dspam/cgi-bin/templates
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/httpd/conf/webapps.d/dspam.conf
