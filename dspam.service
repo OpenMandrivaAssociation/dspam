@@ -1,0 +1,11 @@
+[Unit]
+Description=Libary and MDA for Bayesian spam filtering
+After=network.target
+
+[Service]
+EnvironmentFile=-/etc/sysconfig/dspam
+ExecStart=/usr/bin/dspam --daemon ${DSPAM_USER:-""} ${DSPAM_DEBUG:-""} 2>/dev/null
+PIDFile=/var/run/dspam/dspam.pid
+
+[Install]
+WantedBy=multi-user.target
