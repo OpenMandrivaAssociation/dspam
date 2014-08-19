@@ -405,7 +405,6 @@ fi
 
 %files -n %{develname}
 %attr(0755,root,root) %{_libdir}/libdspam.so
-%attr(0644,root,root) %{_libdir}/libdspam.*a
 %{_includedir}/dspam
 %attr(0644,root,root) %{_libdir}/pkgconfig/dspam.pc
 %attr(0644,root,root) %{_mandir}/man3/*
