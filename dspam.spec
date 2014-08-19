@@ -309,24 +309,13 @@ EOF
 echo "%{_libdir}/dspam" > %{buildroot}%{_sysconfdir}/ld.so.conf.d/dspam.conf
 
 %post
-if [ $1 -eq 1 ] ; then 
-    # Initial installation 
-    /bin/systemctl daemon-reload >/dev/null 2>&1 || :
-fi
+%systemd_post dspam.service
 
 %preun
-if [ $1 -eq 0 ] ; then
-    # Package removal, not upgrade
-    /bin/systemctl --no-reload disable dspam.service > /dev/null 2>&1 || :
-    /bin/systemctl stop dspam.service > /dev/null 2>&1 || :
-fi
+%systemd_preun dspam.service
 
 %postun
-/bin/systemctl daemon-reload >/dev/null 2>&1 || :
-if [ $1 -ge 1 ] ; then
-    # Package upgrade, not uninstall
-    /bin/systemctl try-restart dspam.service >/dev/null 2>&1 || :
-fi
+%systemd_postun_with_restart dspam.service
 
 %post cgi
 /bin/systemctl try-restart httpd
@@ -335,26 +324,6 @@ fi
 if [ "$1" = "0" ]; then
     /bin/systemctl try-restart httpd
 fi
-
-%if "%{distribution}" == "Mandriva Linux"
-	%if %mdkversion < 200900
-		%post -n %{libname} -p /sbin/ldconfig
-
-		%postun -n %{libname} -p /sbin/ldconfig
-
-		%post backend-mysql -p /sbin/ldconfig
-
-		%postun backend-mysql -p /sbin/ldconfig
-
-		%post backend-pgsql -p /sbin/ldconfig
-
-		%postun backend-pgsql -p /sbin/ldconfig
-
-		%post backend-sqlite3 -p /sbin/ldconfig
-
-		%postun backend-sqlite3 -p /sbin/ldconfig
-	%endif
-%endif
 
 %files
 %doc README* RELEASE.NOTES CHANGELOG txt/*.txt
@@ -405,6 +374,7 @@ fi
 
 %files -n %{develname}
 %attr(0755,root,root) %{_libdir}/libdspam.so
+%attr(0644,root,root) %{_libdir}/libdspam.*a
 %{_includedir}/dspam
 %attr(0644,root,root) %{_libdir}/pkgconfig/dspam.pc
 %attr(0644,root,root) %{_mandir}/man3/*
