@@ -10,7 +10,7 @@ Version:	3.10.1
 Release:	6
 License:	GPL
 Group:		System/Servers
-URL:		http://dspam.nuclearelephant.com/
+URL:		https://dspam.nuclearelephant.com/
 Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 Source1:	dspam.cf
 Source2:	dspam.cron
