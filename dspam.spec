@@ -24,6 +24,8 @@ Requires:	clamav clamd
 Requires(post): systemd-units
 Requires(preun): systemd-units
 Requires(postun): systemd-units
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
 BuildRequires:	autoconf2.5
 BuildRequires:	automake
 BuildRequires:	mysql-devel
